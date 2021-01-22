@@ -19,16 +19,16 @@ def main():
                         config.api_id,
                         config.api_hash,
                         proxy=config.proxy) as client:
-        # default images before screen runs on you'r account
+        # default images before scripts runs on you'r account
         profile_images_length = len(client.get_profile_photos('me'))
         print("default images: ", profile_images_length)
 
         while True:
             #print(get_second())
-            # each 0 second upload new time image to profile and
+            # after 1 min upload new time image to profile and
             # remove old generated timer images
             if get_second() == 0:
-                # get current time Asia/Tehran
+                # get current time (Asia/Tehran)
                 time_now = get_current_time()
                 # count length profile images
                 profile_images_current_length = len(client.get_profile_photos('me'))
